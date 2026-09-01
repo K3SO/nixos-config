@@ -9,6 +9,11 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    swapDevices = [{
+        device = "/var/lib/swapfile";
+        size = 4*1024;
+    }];
+
     networking = {
         hostName = "nix";
         networkmanager.enable = true;
