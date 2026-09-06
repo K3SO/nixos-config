@@ -64,8 +64,6 @@
         extraGroups = [ "wheel" ];
     };
 
-    programs.brave-origin.enable = true;
-
     environment.systemPackages = with pkgs; [
         vim
         neovim
@@ -75,6 +73,7 @@
         kitty
         awww
         git
+        brave-origin
     ];
 
     nixpkgs.config.allowUnfree = true;
@@ -83,4 +82,3 @@
 
     system.stateVersion = "26.05";
 }
-
