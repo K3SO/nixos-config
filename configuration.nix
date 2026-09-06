@@ -74,6 +74,7 @@
         awww
         git
         brave-origin
+	    gh
     ];
 
     nixpkgs.config.allowUnfree = true;
