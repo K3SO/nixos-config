@@ -64,6 +64,8 @@
         extraGroups = [ "wheel" ];
     };
 
+    programs.steam.enable = true;
+
     environment.systemPackages = with pkgs; [
         vim
         neovim
@@ -76,6 +78,7 @@
         brave-origin
 	    gh
         obsidian
+        discord
     ];
 
     nixpkgs.config.allowUnfree = true;
