@@ -75,6 +75,7 @@
         git
         brave-origin
 	    gh
+        obsidian
     ];
 
     nixpkgs.config.allowUnfree = true;
