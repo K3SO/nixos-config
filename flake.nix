@@ -14,12 +14,12 @@
 
     outputs = { self, nixpkgs, home-manager, ... }: {
         
-        # "desktop" es el nombre del host.
-        nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        # === ROG STRIX ===
+        nixosConfigurations.rogStrix = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
 
-                ./configuration.nix
+                ./hosts/rogStrix
                 home-manager.nixosModules.home-manager
                 {
                     home-manager = {
