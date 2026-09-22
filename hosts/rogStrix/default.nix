@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, username, host, ... }:
 
 {
     imports =
@@ -18,7 +18,7 @@
     }];
 
     networking = {
-        hostName = "nix";
+        hostName = "${host}";
         networkmanager.enable = true;
         nameservers = [
             "1.1.1.1"
@@ -71,7 +71,7 @@
         jack.enable = true;
     };
 
-    users.users.queso = {
+    users.users.${username} = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
     };
@@ -79,15 +79,15 @@
     home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs username host; };
         backupFileExtension = "hm-backup";
     };
 
     # TEMPORAL
-    home-manager.users.queso = {config, pkgs, ...}: {
+    home-manager.users.${username} = {config, pkgs, ...}: {
         home = {
-            username = "queso";
-            homeDirectory = "/home/queso";
+            username = "${username}";
+            homeDirectory = "/home/${username}";
             stateVersion = "26.05";
         };
         xdg.configFile."hypr" = {

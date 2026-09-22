@@ -20,11 +20,13 @@
             rogStrix = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
+                    host = "nix";
+                    username = "queso";
                     inherit self inputs;
                 };
                 modules = [ ./hosts/rogStrix ];
             };
-            
+
         };
     };
 }
