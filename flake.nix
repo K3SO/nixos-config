@@ -12,26 +12,19 @@
 
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }: {
+    outputs = { self, nixpkgs, ... }@inputs: {
         
-        # === ROG STRIX ===
-        nixosConfigurations.rogStrix = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [
+        nixosConfigurations = {
 
-                ./hosts/rogStrix
-                home-manager.nixosModules.home-manager
-                {
-                    home-manager = {
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users.queso = import ./home.nix;
-                        backupFileExtension = "backup";
-                    };
-                }
-                
-            ];
+            # === ROG STRIX ===
+            rogStrix = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = {
+                    inherit self inputs;
+                };
+                modules = [ ./hosts/rogStrix ];
+            };
+            
         };
-
     };
 }

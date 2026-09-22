@@ -1,9 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
     imports =
         [
             ./hardware-configuration.nix
+            inputs.home-manager.nixosModules.home-manager
         ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -70,9 +71,29 @@
         jack.enable = true;
     };
 
-    users.users."queso" = {
+    users.users.queso = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
+    };
+
+    home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
+        backupFileExtension = "hm-backup";
+    };
+
+    # TEMPORAL
+    home-manager.users.queso = {config, pkgs, ...}: {
+        home = {
+            username = "queso";
+            homeDirectory = "/home/queso";
+            stateVersion = "26.05";
+        };
+        xdg.configFile."hypr" = {
+            source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/hypr/";
+            recursive = true;
+        };
     };
 
     programs.steam.enable = true;
