@@ -2,6 +2,6 @@
 
 {
     imports = [
-        # ./modules.nix
+        ./networking.nix
     ];
 }

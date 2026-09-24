@@ -18,19 +18,6 @@
         size = 4*1024;
     }];
 
-    networking = {
-        hostName = "${host}";
-        networkmanager.enable = true;
-        nameservers = [
-            "1.1.1.1"
-            "8.8.8.8"
-        ];
-        firewall = {
-            enable = true;
-            # allowedTCPPorts = [  ];
-        };
-    };
-
     time.timeZone = "Europe/Madrid";
 
     i18n.defaultLocale = "en_US.UTF-8";
