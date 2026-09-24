@@ -8,11 +8,6 @@
             inputs.home-manager.nixosModules.home-manager
         ];
 
-    swapDevices = [{
-        device = "/var/lib/swapfile";
-        size = 4*1024;
-    }];
-
     services.displayManager.ly.enable = true;
 
     programs.hyprland = {

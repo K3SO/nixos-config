@@ -22,6 +22,7 @@
                 specialArgs = {
                     host = "nix";
                     username = "queso";
+                    swapsize = 4; #GiB
                     inherit self inputs;
                 };
                 modules = [ ./hosts/rogStrix ];
