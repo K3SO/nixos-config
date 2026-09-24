@@ -8,11 +8,6 @@
             inputs.home-manager.nixosModules.home-manager
         ];
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-
     swapDevices = [{
         device = "/var/lib/swapfile";
         size = 4*1024;
