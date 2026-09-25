@@ -7,5 +7,6 @@
         ./locale.nix
         ./networking.nix
         ./swap.nix
+        ./users.nix
     ];
 }

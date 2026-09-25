@@ -5,7 +5,6 @@
         [
             ./hardware-configuration.nix
             ../../modules/core
-            inputs.home-manager.nixosModules.home-manager
         ];
 
     services.displayManager.ly.enable = true;
@@ -19,31 +18,6 @@
         # It also has some nice advantages tho.
         # Maybe consider niri??
         withUWSM = true;
-    };
-
-    users.users.${username} = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" ];
-    };
-
-    home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        extraSpecialArgs = { inherit inputs username host; };
-        backupFileExtension = "hm-backup";
-    };
-
-    # TEMPORAL
-    home-manager.users.${username} = {config, pkgs, ...}: {
-        home = {
-            username = "${username}";
-            homeDirectory = "/home/${username}";
-            stateVersion = "26.05";
-        };
-        xdg.configFile."hypr" = {
-            source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/hypr/";
-            recursive = true;
-        };
     };
 
     programs.steam.enable = true;
