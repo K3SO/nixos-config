@@ -9,6 +9,7 @@
         ./networking.nix
         ./packages.nix
         ./swap.nix
+        ./system.nix
         ./users.nix
     ];
 }
