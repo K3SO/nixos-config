@@ -7,17 +7,6 @@
             ../../modules/core
         ];
 
-    programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
-        
-        # This fix the graphical-session.target not starting problem,
-        # not the ideal solution, adds an extra layer, but works.
-        # It also has some nice advantages tho.
-        # Maybe consider niri??
-        withUWSM = true;
-    };
-
     services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.graphics = {
