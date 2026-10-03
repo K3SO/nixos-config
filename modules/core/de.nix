@@ -15,7 +15,8 @@
     };
 
     environment.systemPackages = with pkgs; [
-        kitty # Terminal emulator
-        awww # Wallpaper (awww-daemon)
+        kitty           # Terminal emulator
+        awww            # Wallpaper (awww-daemon)
+        quickshell      # Shell
     ];
 }

@@ -24,6 +24,7 @@
         obsidian        # Note app
         discord
         brave-origin    # Browser
+        mpv             # Multimedia player (the best you can find (a lot better than vlc))
 
     ];
 }
