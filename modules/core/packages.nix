@@ -21,10 +21,11 @@
 	    gh
 
         # Misc
-        obsidian        # Note app
+        obsidian            # Note app
         discord
-        brave-origin    # Browser
-        mpv             # Multimedia player (the best you can find (a lot better than vlc))
+        brave-origin        # Browser
+        mpv                 # Multimedia player (the best you can find (a lot better than vlc))
+        davinci-resolve     # Video and photo editor
 
     ];
 }
