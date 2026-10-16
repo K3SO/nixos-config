@@ -14,6 +14,8 @@
         withUWSM = true;
     };
 
+    programs.starship.enable = true;
+
     environment.systemPackages = with pkgs; [
         kitty           # Terminal emulator
         awww            # Wallpaper (awww-daemon)
