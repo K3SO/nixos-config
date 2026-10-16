@@ -28,6 +28,18 @@
                 modules = [ ./hosts/rogStrix ];
             };
 
+            # === TEST HOST ===
+            testHost = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = {
+                    host = "test";
+                    username = "user";
+                    swapsize = 4; #GiB
+                    inherit self inputs;
+                };
+                modules = [ ./hosts/testHost ];
+            };
+
         };
     };
 }
