@@ -33,7 +33,7 @@
                 system = "x86_64-linux";
                 specialArgs = {
                     host = "test";
-                    username = "user";
+                    username = "queso";
                     swapsize = 4; #GiB
                     inherit self inputs;
                 };
