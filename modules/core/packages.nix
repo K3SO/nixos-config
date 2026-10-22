@@ -1,31 +1,64 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {   
-    programs.steam.enable = true;
-    
-    programs.obs-studio.enable = true;
+    options = {
+        texteditors.enable = lib.mkEnableOption "Enables optional text editors";
+        gaming.enable = lib.mkEnableOption "Enables gaming related programs";
+        video.enable = lib.mkEnableOption "Enables video related programs";
+        productivity.enable = lib.mkEnableOption "Enables productivity related programs";
+    };
 
-    environment.systemPackages = with pkgs; [
+    config = {
 
-        # Text editors
-        vim
-        neovim
-        vscodium
+        # Gaming
+        programs.steam.enable = lib.mkIf config.gaming.enable true;
 
-        # Utility
-        wget
-        curl
-        
-        # Version control
-        git
-	    gh
+        # Video
+        programs.obs-studio.enable = lib.mkIf config.video.enable true;
 
-        # Misc
-        obsidian            # Note app
-        discord
-        brave-origin        # Browser
-        mpv                 # Multimedia player (the best you can find (a lot better than vlc))
-        davinci-resolve     # Video and photo editor
+        # Packages
+        environment.systemPackages =
 
-    ];
+            # Text Editors
+            (lib.optionals config.texteditors.enable [
+                pkgs.vscodium
+                pkgs.neovim
+            ])++
+
+            # Gaming
+            (lib.optionals config.gaming.enable [
+                pkgs.discord
+            ])++
+
+            # Video
+            (lib.optionals config.video.enable [
+                pkgs.mpv                 # Multimedia player (the best you can find (a lot better than vlc))
+                pkgs.davinci-resolve     # Video and photo editor
+            ])++
+
+            # Productivity
+            (lib.optionals config.productivity.enable [
+                pkgs.obsidian           # Note app
+            ])++
+
+            # Misc / essential
+            (with pkgs; [
+
+                # Text editors
+                vim
+
+                # Utility
+                wget
+                curl
+                
+                # Version control
+                git
+                gh
+
+                # Misc
+                brave-origin        # Browser
+
+            ]);
+
+    };
 }
