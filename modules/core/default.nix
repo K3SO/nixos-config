@@ -9,7 +9,6 @@
         ./locale.nix
         ./networking.nix
         ./packages.nix
-        ./swap.nix
         ./system.nix
         ./users.nix
     ];
@@ -19,5 +18,9 @@
     gaming.enable = lib.mkDefault false;
     video.enable = lib.mkDefault false;
     productivity.enable = lib.mkDefault false;
+
+    # system.nix
+    unfree.enable = lib.mkDefault true;
+    swapsize = lib.mkDefault 4;
 
 }

@@ -14,4 +14,8 @@
     video.enable = false;
     productivity.enable = false;
 
+    # system.nix
+    unfree.enable = true;
+    swapsize = 16;
+
 }
