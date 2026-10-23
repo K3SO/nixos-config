@@ -5,6 +5,7 @@
         ./audio.nix
         ./boot.nix
         ./de.nix
+        ./fonts.nix
         ./locale.nix
         ./networking.nix
         ./packages.nix
