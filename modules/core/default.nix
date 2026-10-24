@@ -20,7 +20,8 @@
     productivity.enable = lib.mkDefault false;
 
     # system.nix
-    unfree.enable = lib.mkDefault true;
     swapsize = lib.mkDefault 4;
+    wheelNeedsPassword.enable = lib.mkDefault true;
+    unfree.enable = lib.mkDefault true;
 
 }

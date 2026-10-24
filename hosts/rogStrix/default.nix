@@ -15,7 +15,8 @@
     productivity.enable = true;
 
     # system.nix
-    unfree.enable = true;
     swapsize = 4;
+    wheelNeedsPassword.enable = false;
+    unfree.enable = true;
 
 }
