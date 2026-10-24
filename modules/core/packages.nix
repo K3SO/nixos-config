@@ -57,6 +57,7 @@
 
                 # Misc
                 brave-origin        # Browser
+                godot
 
             ]);
 
