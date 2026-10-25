@@ -16,6 +16,15 @@
         # Video
         programs.obs-studio.enable = lib.mkIf config.video.enable true;
 
+        # No option
+        programs.fish = {
+            enable = true;
+            shellAbbrs = {
+                gs = "git status";
+                gc = ''git commit -m ""'';
+            };
+        };
+
         # Packages
         environment.systemPackages =
 
@@ -41,7 +50,7 @@
                 pkgs.obsidian           # Note app
             ])++
 
-            # Misc / essential
+            # No option
             (with pkgs; [
 
                 # Text editors

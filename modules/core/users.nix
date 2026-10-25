@@ -1,4 +1,4 @@
-{ inputs, username, host, ... }:
+{ inputs, pkgs, username, host, ... }:
 
 {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -6,6 +6,7 @@
     users.users.${username} = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
+        shell = pkgs.fish;
     };
 
     home-manager = {

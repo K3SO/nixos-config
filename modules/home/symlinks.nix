@@ -1,6 +1,10 @@
 { config, lib, ... }:
 
 {
+    xdg.configFile."fish" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/fish/";
+        recursive = true;
+    };
     xdg.configFile."hypr" = {
         source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/hypr/";
         recursive = true;
