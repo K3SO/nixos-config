@@ -12,6 +12,7 @@
     texteditors.enable = true;
     gaming.enable = true;
     video.enable = true;
+    gamedev.enable = true;
     productivity.enable = true;
 
     # system.nix

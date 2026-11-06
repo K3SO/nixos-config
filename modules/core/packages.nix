@@ -5,6 +5,7 @@
         texteditors.enable = lib.mkEnableOption "Enables optional text editors";
         gaming.enable = lib.mkEnableOption "Enables gaming related programs";
         video.enable = lib.mkEnableOption "Enables video related programs";
+        gamedev.enable = lib.mkEnableOption "Enables gamedev related programs";
         productivity.enable = lib.mkEnableOption "Enables productivity related programs";
     };
 
@@ -41,8 +42,16 @@
 
             # Video
             (lib.optionals config.video.enable [
-                pkgs.mpv                 # Multimedia player (the best you can find (a lot better than vlc))
-                pkgs.davinci-resolve     # Video and photo editor
+                pkgs.mpv                # Multimedia player (the best you can find (a lot better than vlc))
+                pkgs.davinci-resolve    # Video and photo editor
+            ])++
+
+            # Gamedev
+            (lib.optionals config.gamedev.enable [
+                pkgs.godot              # Game engine
+                pkgs.blender            # 3D modeling software
+                pkgs.aseprite           # Pixel art editor
+                pkgs.gimp               # Image editor
             ])++
 
             # Productivity
@@ -66,7 +75,6 @@
 
                 # Misc
                 brave-origin        # Browser
-                godot
 
             ]);
 
