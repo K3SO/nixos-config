@@ -15,15 +15,15 @@ hl.monitor({
 })
 
 -- Workspaces 1 to 5 on main monitor
-hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1", persistent = true })
-hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", persistent = true })
-hl.workspace_rule({ workspace = "3", monitor = "HDMI-A-1", persistent = true })
-hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-1", persistent = true })
-hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", persistent = true })
+hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "3", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1" })
 
 -- Workspaces 6 to 10 on second monitor
-hl.workspace_rule({ workspace = "6", monitor = "eDP-1", persistent = true })
-hl.workspace_rule({ workspace = "7", monitor = "eDP-1", persistent = true })
-hl.workspace_rule({ workspace = "8", monitor = "eDP-1", persistent = true })
-hl.workspace_rule({ workspace = "9", monitor = "eDP-1", persistent = true })
-hl.workspace_rule({ workspace = "10", monitor = "eDP-1", persistent = true })
+hl.workspace_rule({ workspace = "6", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "7", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "8", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "9", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "10", monitor = "eDP-1" })
