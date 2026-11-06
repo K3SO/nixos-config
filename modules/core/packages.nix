@@ -68,6 +68,7 @@
                 # Utility
                 wget
                 curl
+                unzip
                 
                 # Version control
                 git
