@@ -7,7 +7,9 @@
         
         networkmanager = {
             enable = true;
-            wifi.backend = "iwd";
+            # iwd should work better than wpa, but for some reason it doesn't.
+            # I'll try to configure it someday.
+            # wifi.backend = "iwd";
         };
 
         nameservers = [
