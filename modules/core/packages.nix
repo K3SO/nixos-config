@@ -38,6 +38,7 @@
             # Gaming
             (lib.optionals config.gaming.enable [
                 pkgs.discord
+                pkgs.prismlauncher       # Minecraft launcher
             ])++
 
             # Video
