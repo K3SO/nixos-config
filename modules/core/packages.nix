@@ -77,6 +77,7 @@
 
                 # Misc
                 brave-origin        # Browser
+                yazi                # Terminal file manager
 
             ]);
 
