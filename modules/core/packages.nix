@@ -38,7 +38,7 @@
             # Gaming
             (lib.optionals config.gaming.enable [
                 pkgs.discord
-                pkgs.prismlauncher       # Minecraft launcher
+                pkgs.prismlauncher      # Minecraft launcher
             ])++
 
             # Video
@@ -78,6 +78,7 @@
                 # Misc
                 brave-origin        # Browser
                 yazi                # Terminal file manager
+                brightnessctl
 
             ]);
 
