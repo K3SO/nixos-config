@@ -13,6 +13,10 @@
         source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/kitty/";
         recursive = true;
     };
+    xdg.configFile."quickshell" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/quickshell/";
+        recursive = true;
+    };
     xdg.configFile."starship.toml" = {
         source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/config/starship.toml";
         recursive = true;
