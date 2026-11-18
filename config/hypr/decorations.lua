@@ -1,35 +1,36 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        border_size = 3,
+        border_size = 1,
 
         gaps_in  = 8,
         gaps_out = 20,
 
         col = {
+            -- active_border   = "rgba(ccccccff)",
             active_border   = { colors = {"rgba(ccccccff)", "rgba(555555ff)"}, angle = "90"},
             inactive_border = "rgba(55555588)",
         },
     },
 
     decoration = {
-        rounding       = 2,
-        rounding_power = 7,
+        rounding       = 1,
+        rounding_power = 3,
 
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
 
         shadow = {
             enabled      = true,
-            range        = 40,
-            render_power = 3,
-            color        = 0xcc0c0c0c,
+            range        = 20,
+            render_power = 4,
+            color        = 0x55000000,
         },
 
         blur = {
             enabled   = true,
-            size      = 10,
-            passes    = 3,
+            size      = 5,
+            passes    = 2,
             vibrancy  = 0.1696,
         },
     },
@@ -46,8 +47,8 @@ hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 -- Springs
-hl.curve("fast",   { type = "spring", mass = 1, stiffness = 900, dampening = 55})
-hl.curve("smooth", { type = "spring", mass = 1, stiffness = 700, dampening = 50})
+hl.curve("fast",   { type = "spring", mass = 1, stiffness = 900, dampening = 50})
+hl.curve("smooth", { type = "spring", mass = 1, stiffness = 400, dampening = 35})
 
 -- Animations
 hl.animation({ leaf = "global",           enabled = true,  speed = 10,  bezier = "default" })
