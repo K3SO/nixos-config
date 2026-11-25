@@ -4,7 +4,7 @@ import QtQuick.Layouts
 import Quickshell.Hyprland
 
 RowLayout {
-    spacing: 8
+    spacing: 10
 
     Repeater {
         model: 10

@@ -3,7 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 
 RowLayout {
-    spacing: 8
+    spacing: 15
 
     RowLayout {
         spacing: 3
