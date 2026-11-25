@@ -11,6 +11,7 @@ import QtQuick
 Scope {
     id: root
     property string font: "JetBrainsMono NF"
+    property var theme: DefaultTheme {}
 
     Variants {
         model: Quickshell.screens
@@ -43,7 +44,7 @@ Scope {
                         bottomMargin: 1
                     }
 
-                    color: "#000000"
+                    color: root.theme.bg
 
                     Left {
                         anchors {

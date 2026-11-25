@@ -9,12 +9,12 @@ RowLayout {
         spacing: 3
         Text {
             text: Volume.volumeIcon
-            color: "#ffffff"
+            color: root.theme.text
             font.family: root.font
         }
         Text {
             text: Volume.volume
-            color: "#ffffff"
+            color: root.theme.text
             font.family: root.font
         }
     }
@@ -23,12 +23,12 @@ RowLayout {
         spacing: 3
         Text {
             text: Battery.batteryIcon
-            color: "#ffffff"
+            color: root.theme.text
             font.family: root.font
         }
         Text {
             text: Battery.batteryLevel
-            color: "#ffffff"
+            color: root.theme.text
             font.family: root.font
         }
     }
@@ -37,7 +37,7 @@ RowLayout {
         Text {
             anchors.centerIn: parent
             text: Time.timeString
-            color: "#ffffff"
+            color: root.theme.text
             font.family: root.font
         }
     }
