@@ -79,6 +79,8 @@
                 brave-origin        # Browser
                 yazi                # Terminal file manager
                 brightnessctl
+                tone3000            # Guitar/bass amp (really cool)
+                qjackctl            # Jack server
 
             ]);
 
