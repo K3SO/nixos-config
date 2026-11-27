@@ -17,7 +17,9 @@
     texteditors.enable = lib.mkDefault false;
     gaming.enable = lib.mkDefault false;
     video.enable = lib.mkDefault false;
+    music.enable = lib.mkDefault false;
     gamedev.enable = lib.mkDefault false;
+    desktop.enable = lib.mkDefault true;
     productivity.enable = lib.mkDefault false;
 
     # system.nix

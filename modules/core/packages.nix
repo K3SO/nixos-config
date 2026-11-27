@@ -5,7 +5,9 @@
         texteditors.enable = lib.mkEnableOption "Enables optional text editors";
         gaming.enable = lib.mkEnableOption "Enables gaming related programs";
         video.enable = lib.mkEnableOption "Enables video related programs";
+        music.enable = lib.mkEnableOption "Enables music related programs";
         gamedev.enable = lib.mkEnableOption "Enables gamedev related programs";
+        desktop.enable = lib.mkEnableOption "Enables basic desktop programs";
         productivity.enable = lib.mkEnableOption "Enables productivity related programs";
     };
 
@@ -48,12 +50,25 @@
                 pkgs.davinci-resolve    # Video and photo editor
             ])++
 
+            # Music
+            (lib.optionals config.music.enable [
+                pkgs.qjackctl           # Jack server
+                pkgs.tone3000           # Guitar/bass amp (really cool)
+            ])++
+
             # Gamedev
             (lib.optionals config.gamedev.enable [
                 pkgs.godot              # Game engine
                 pkgs.blender            # 3D modeling software
                 pkgs.aseprite           # Pixel art editor
                 pkgs.gimp               # Image editor
+            ])++
+
+            # Desktop
+            (lib.optionals config.desktop.enable [
+                pkgs.brave-origin       # Browser
+                pkgs.yazi               # Terminal file manager
+                pkgs.brightnessctl
             ])++
 
             # Productivity
@@ -77,11 +92,6 @@
                 gh
 
                 # Misc
-                brave-origin        # Browser
-                yazi                # Terminal file manager
-                brightnessctl
-                tone3000            # Guitar/bass amp (really cool)
-                qjackctl            # Jack server
 
             ]);
 
